@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="static/logo_ld.png" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Recommandation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet"> 
+    <!-- Bootstrap theme -->
+    <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/theme.css') }}" rel="stylesheet">
+
+  </head>
+<style>
+.left {
+  margin-top: -1.8cm;
+  margin-left: 0.6cm;
+}
+</style>
+  <body>
+    <div class="left">
+      <a  href="{{ url_for('getSim') }}">
+        <span  class="glyphicon glyphicon-arrow-left  " style="font-size:24px;color:black;"></span>
+      </a>
+    </div>
+    <div class="container theme-showcase" role="main">
+   
+      <div class="jumbotron">
+        <h2 >Textes similaires au texte :  "{{ title_text }}" </h1>
+      </div>
+      {% for similarity in similarities %}
+        <ul class="well">
+          <ol>{{similarity}}</ol>  
+        </ul>
+ {% endfor %}
+
+    
+</div>
+  </body>
+</html>

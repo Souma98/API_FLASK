@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="static/logo_ld.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Recommandation</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/sign.css') }}" rel="stylesheet">
+  </head>
+  <style>
+    .left {
+      top: 1cm;
+      margin-left: -2.3cm;
+    }
+    </style>
+  <body>
+
+    <div class="container ">
+      <div class="left">
+        <a href="{{ url_for('index') }}">
+          <span  class="glyphicon glyphicon-arrow-left  " style="font-size:24px;color:black;"></span>
+        </a>
+      </div>
+      <form class="form-signin" method="post" action="/showRec">
+        <h1 class="h1 ">Recommandation des textes</h1>
+        <div class="form-group checkbox">
+          <label for="user_id" class="sr-only"></label>
+          <input type="text" id="user_id" name="user_id" class="form-control " placeholder="Entrer l'identifiant de l'utilisateur" required autofocus>
+        </div>
+        
+        <button class="btn btn-lg  btn-block button" type="submit">Voir les recommandations</button>
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
